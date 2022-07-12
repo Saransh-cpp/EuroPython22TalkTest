@@ -36,6 +36,7 @@ jobs:
         python -m pip install -U coverage
     - name: Run unit tests and generate coverage report
       run: |
-        coverage run –concurrency=multiprocessing -m unittest -v
+        coverage run --concurrency=multiprocessing -m unittest -v
+        coverage combine
     - name: Upload coverage report to Codecov
       uses: codecov/codecov-action@v2
